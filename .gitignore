@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+.downloads/
+.venv/
+.idea/
+.DS_Store
+__pycache__/
+*.py[cod]
+*.session
+*.session-journal
+*.egg-info/
+build/
+dist/

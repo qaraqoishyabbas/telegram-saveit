@@ -1,0 +1,30 @@
+services:
+  saveit-account1:
+    build: .
+    env_file:
+      - .env
+    environment:
+      LOGIN_MODE: qr
+    volumes:
+      - ./.downloads/account1:/app/downloads
+      - saveit-account1-session:/app/session
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+  saveit-account2:
+    build: .
+    env_file:
+      - .env.account2
+    environment:
+      LOGIN_MODE: qr
+    volumes:
+      - ./.downloads/account2:/app/downloads
+      - saveit-account2-session:/app/session
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+volumes:
+  saveit-account1-session:
+  saveit-account2-session:
